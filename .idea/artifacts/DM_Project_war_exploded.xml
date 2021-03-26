@@ -1,0 +1,37 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="DM-Project:war exploded">
+    <output-path>$PROJECT_DIR$/target/DM-Project-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>DM-Project</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="DM-Project" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.json:json:20210307" />
+          <element id="library" level="project" name="Maven: javax.xml.parsers:jaxp-api:1.4.5" />
+          <element id="library" level="project" name="Maven: net.sf.saxon:Saxon-HE:9.8.0-12" />
+          <element id="library" level="project" name="Maven: org.apache.camel:camel-xslt:3.8.0" />
+          <element id="library" level="project" name="Maven: org.apache.camel:camel-support:3.8.0" />
+          <element id="library" level="project" name="Maven: org.apache.camel:camel-api:3.8.0" />
+          <element id="library" level="project" name="Maven: org.apache.camel:camel-management-api:3.8.0" />
+          <element id="library" level="project" name="Maven: org.apache.camel:camel-util:3.8.0" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.30" />
+          <element id="library" level="project" name="Maven: org.apache.camel:camel-xml-jaxp:3.8.0" />
+          <element id="library" level="project" name="Maven: org.jdom:jdom:1.1" />
+          <element id="library" level="project" name="Maven: org.ccil.cowan.tagsoup:tagsoup:1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/DM-Project-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="DM-Project/web/Web" />
+    </root>
+  </artifact>
+</component>
