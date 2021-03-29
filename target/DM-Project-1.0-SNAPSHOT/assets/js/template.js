@@ -1,25 +1,23 @@
-$(function() {
-    // Remove button click
-    $(document).on(
-        'click',
-        '[data-role="dynamic-fields"] > .form-inline [data-role="remove"]',
-        function(e) {
-            e.preventDefault();
-            $(this).closest('.form-inline').remove();
-        }
-    );
-    // Add button click
-    $(document).on(
-        'click',
-        '[data-role="dynamic-fields"] > .form-inline [data-role="add"]',
-        function(e) {
-            e.preventDefault();
-            var container = $(this).closest('[data-role="dynamic-fields"]');
-            new_field_group = container.children().filter('.form-inline:first-child').clone();
-            new_field_group.find('input').each(function(){
-                $(this).val('');
-            });
-            container.append(new_field_group);
-        }
-    );
+$(function()
+{
+    $(document).on('click', '.btn-add', function(e)
+    {
+        e.preventDefault();
+
+        var controlForm = $('.controls form:first'),
+            currentEntry = $(this).parents('.entry:first'),
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+        newEntry.find('input').val('');
+        controlForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span class="glyphicon glyphicon-minus"></span>');
+    }).on('click', '.btn-remove', function(e)
+    {
+        $(this).parents('.entry:first').remove();
+
+        e.preventDefault();
+        return false;
+    });
 });
